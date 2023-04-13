@@ -35,7 +35,7 @@
 	<input type="radio" name="c_type" value="VIP">VIP<br><br>
 	
 	<input type="submit" value="수강 등록"> &nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="submit" value="취소">
+	<input type="reset" value="취소">
 	</form>
 
 </body>
