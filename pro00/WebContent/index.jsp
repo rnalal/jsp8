@@ -27,7 +27,7 @@
 			<li><span>마이에스큐엘</span>
 				<ul>
 					<li><a href="mySqlWebList.jsp">목록 보기</a></li>
-					<li><a href="mySqlWebInsert.jsp">데이터 추가하기</a></li>
+					<li><a href="mysqlWebInsert.jsp">데이터 추가하기</a></li>
 				</ul>
 			</li>
 			<li><span>마리아DB</span>

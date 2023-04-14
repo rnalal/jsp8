@@ -29,7 +29,8 @@
 </head>
 <body>
 	<hr>
-		<a href="index.jsp">메인페이지로</a>
+		<a href="index.jsp">메인페이지로</a>		
+		<a href="mysqlWebInsert.jsp">회원가입하기</a>
 	<hr>
 	<table>
 	<thead>
@@ -38,10 +39,11 @@
 	<tbody>
 <%
 		while(rs.next()){
+			String d1 = rs.getString("pw").substring(0,1);
 %>
 	<tr>
-		<td><%=rs.getString("id") %></td>
-		<td><%=rs.getString("pw") %></td>
+		<td><a href="mysqlWebUpdate.jsp?id=<%=rs.getString("id") %>"><%=rs.getString("id") %></a></td>
+		<td><%=d1 %>***</td>
 		<td><%=rs.getString("name") %></td>
 	</tr>
 <%

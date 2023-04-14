@@ -60,8 +60,10 @@
 			<tr>
 				<td><%=rs.getInt("member_seq") %></td>
 				<td><%=rs.getString("c_no") %></td>
-				<td><a href="oracleWebUpdate.jsp?c_no=<%=rs.getString("c_no") %>">
-					<%=rs.getString("c_name") %>님</a></td>
+				<td>
+				<a href='oracledetail.jsp?member_seq=<%=rs.getString("member_seq") %>'>
+					<%=rs.getString("c_name") %>님</a>
+				</td>
 				<td><%=tel %></td>
 				<td><%=date1 %></td>
 			</tr>

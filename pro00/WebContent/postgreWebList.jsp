@@ -31,6 +31,7 @@
 	<hr>
 		<nav>
 			<a href="index.jsp">메인페이지</a>
+			<a href="postgreWebInsert.jsp">제품추가</a>
 		</nav>
 	<hr>
 	<table>
@@ -50,12 +51,22 @@
 		while(rs.next()){
 %>
 		<tr>
-			<td><%=rs.getInt("id") %></td>
+			<td>
+			<a href='postgreWebUpdate.jsp?id=<%=rs.getString("id")%>'>
+			<%=rs.getInt("id") %></a></td>
 			<td><%=rs.getString("maker") %></td>
 			<td><%=rs.getString("model") %></td>
 			<td><%=rs.getInt("year") %></td>
 			<td><%=rs.getString("color") %></td>
-			<td><%=rs.getDate("created_at") %></td>
+			<td><%=rs.getString("created_at") %></td>
+			
+			<!-- rs.getString할때 컬럼명이 중복되거나, 너무 길면 as로 지정가능 
+			예) select a.c_name as cname, b_class_area as carea from tbl_member a inner join tbl_course b on a.con=b.c_no;
+			
+			rs.getString("cname");
+			rs.getString("carea"); 
+			 -->
+			 
 		</tr>
 	
 <%

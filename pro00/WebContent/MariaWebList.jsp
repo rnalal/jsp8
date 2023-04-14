@@ -30,13 +30,14 @@
 <body>
 	<hr>
 	<nav>
-			<a href=index.jsp>메인 페이지</a>		
+			<a href=index.jsp>메인 페이지</a>	
+			<a href=MariaWebInsert.jsp>강좌추가</a>	
 	</nav>
 	<hr>
 	<table>
 	<thead>
 		<tr>
-			<th>아이디</th>
+			<th>강좌번호</th>
 			<th>강좌이름</th>
 			<th>학점</th>
 			<th>강사번호</th>
@@ -51,7 +52,10 @@
 	
 	<tbody>
 		<tr>
-			<td><%=rs.getString("id") %></td>
+			<td>
+			<a href="MariaWebUpdate.jsp?id=<%=rs.getString("id")%>">
+			<%=rs.getString("id") %></a>
+			</td>
 			<td><%=rs.getString("name") %></td>
 			<td><%=rs.getInt("credit") %></td>
 			<td><%=rs.getString("lecturer") %></td>

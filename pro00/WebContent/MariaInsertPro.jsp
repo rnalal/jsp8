@@ -1,17 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import ="java.sql.*" %>
+<%@ page import = "java.sql.*" %>
 
 <%
 	request.setCharacterEncoding("utf-8");
 	response.setContentType("text/html; charset=utf-8");
 	
 	String id = request.getParameter("id");
-	String pw = request.getParameter("pw");
 	String name = request.getParameter("name");
+	int credit = Integer.parseInt(request.getParameter("credit"));
+	String lecturer = request.getParameter("lecturer");
+	int week = Integer.parseInt(request.getParameter("week"));
+	int start_hour = Integer.parseInt(request.getParameter("start_hour"));
+	int end_end = Integer.parseInt(request.getParameter("end_end"));
 	
-	String driver = "com.mysql.cj.jdbc.Driver";
-	String url = "jdbc:mysql://localhost:3306/sample?serverTimezone=Asia/Seoul";
+	String driver = "org.mariadb.jdbc.Driver";
+	String url = "jdbc:mariadb://127.0.0.1:3308/company";
 	String user = "root";
 	String pass = "1234";
 	
@@ -23,24 +27,28 @@
 		Class.forName(driver);
 		try{
 			conn = DriverManager.getConnection(url, user, pass);
-			sql = "insert into test2 values (?, ?, ?)";
+			sql = "insert into course_tbl values (?, ?, ?, ?, ?, ? ,?)";
 			try{
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, id);
-				pstmt.setString(2, pw);
-				pstmt.setString(3, name);
+				pstmt.setString(2, name);
+				pstmt.setInt(3, credit);
+				pstmt.setString(4, lecturer);
+				pstmt.setInt(5, week);
+				pstmt.setInt(6, start_hour);
+				pstmt.setInt(7, end_end);
 				
 				a = pstmt.executeUpdate();
 				
 				if(a>0){
-					System.out.println("회원가입 성공");
+					System.out.println("강좌등록 성공");
 				} else{
-					System.out.println("회원가입 실패");
+					System.out.println("강좌등록 실패");
 				}
 				
 				pstmt.close();
 				conn.close();
-				response.sendRedirect("mysqlWebInsert.jsp");
+				response.sendRedirect("MariaWebInsert.jsp");
 			}catch(SQLException e){
 				System.out.println("SQL 연결 실패");
 			}
