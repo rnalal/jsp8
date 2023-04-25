@@ -18,10 +18,10 @@
 <style>
 	.title{text-align:center;}
 	#tbl {width:800px; margin: 0 auto; }
+	#lst1, .msg, #tb1 { width:800px; margin:0 auto; }
 </style>
 </head>
 <body>
-	<h2 class="title">요청 정보 보기</h2>
 <%
 	String msg = request.getParameter("msg");
 %>

@@ -25,7 +25,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1_form.jsp - 폼 입력 테스트1</title>
+<title>자세히 보기</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
@@ -37,8 +37,7 @@
 </style>
 </head>
 <body>
-	<h2 class="title">작성내용확인</h2>
-	<form action="test1.jsp" method="post">
+	<h2 class="title">작성 내용 확인</h2>
 		<table class="table" id="tbl">
 			<tbody>
 				<tr>
@@ -68,8 +67,8 @@
 					</td>
 				</tr>
 <%
-	String msg = "아이디: "+request.getParameter("id")+", 이름: ";
-	msg = msg +request.getParameter("name")+", 나이: "+age;
+		String msg = "아이디 : "+request.getParameter("id")+", 이름 : ";
+		msg = msg +request.getParameter("name")+", 나이 : "+age;
 %>								
 				<tr>
 					<td colspan="2">
@@ -79,6 +78,5 @@
 				</tr>
 			</tbody>
 		</table>
-	</form>
 </body>
 </html>

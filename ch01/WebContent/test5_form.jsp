@@ -13,10 +13,11 @@
 <style>
 	.title{text-align:center;}
 	#tbl {width:800px; margin: 0 auto; }
+	#tb1, .msg { width:600px; margin:0 auto; }
 </style>
 </head>
 <body>
-	<h2 class="title">테스트5폼</h2>
+	<h2 class="title">Response 객체 폼</h2>
 	<form name="login_form" action="test5.jsp" method="post">
 		<table class="table" id="tbl">
 			<tbody>
@@ -37,6 +38,9 @@
 			</tbody>
 		</table>
 	</form>
+	<p></p>
+	<hr>
+	<p></p>
 	<div class="msg">
 		<%
 			String id = (String) session.getAttribute("id");

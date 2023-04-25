@@ -17,9 +17,11 @@
 <style>
 	.title{text-align:center;}
 	#tbl {width:800px; margin: 0 auto; }
+	#lst1, .msg, #tb1 { width:800px; margin:0 auto; }
 </style>
 </head>
 <body>
+<div class="msg">
 <%
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
@@ -57,5 +59,6 @@
 	<p> 저장된 상태코드: <%=  response.getStatus() %></p>
 	<p> 저장된 세션정보 아이디: <%=  session.getAttribute("id") %></p>
 	<p> 저장된 세션정보 비밀번호: <%=  session.getAttribute("pw") %></p>	
+</div>	
 </body>
 </html>

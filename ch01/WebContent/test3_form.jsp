@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test3_form.jsp - 설문조사</title>
+<title>폼 입력 테스트3</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
@@ -13,6 +13,7 @@
 <style>
 	.title{text-align:center;}
 	#tbl {width:800px; margin: 0 auto; }
+	#tb1, .msg { width:600px; margin:0 auto; }
 </style>
 </head>
 <body>
@@ -43,12 +44,23 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<input type="submit" value="제출"> &nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="reset" value="취소">
+						<input type="submit" value="제출" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="reset" value="취소" class="btn">
 					</td>	
 				</tr>
 			</tbody>
 		</table>
 	</form>
+	<p></p>
+	<hr>
+	<p></p>
+	<div class="msg">
+<%	
+	String msg = request.getParameter("msg");
+	if(msg!=null){
+		out.println("<h3>"+msg+"</h3>");
+	}
+%>	
+	</div>
 </body>
 </html>

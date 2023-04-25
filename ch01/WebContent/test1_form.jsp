@@ -12,7 +12,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <style>
 	.title{text-align:center;}
-	#tbl {width:800px; margin: 0 auto; }
+	#tbl {width:800px; margin: 0 auto;}
+	#tb1, .msg { width:600px; margin:0 auto; }
 </style>
 </head>
 <body>
@@ -32,10 +33,38 @@
 					<td colspan="2">
 						<input type="submit" value="로그인" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="reset" value="취소" class="btn">
-					</td>	
+					</td>
 				</tr>
 			</tbody>
 		</table>
 	</form>
+	<p></p>
+	<hr>
+	<p></p>
+	<div class="msg">
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>GET</th>
+					<th>POST</th>
+				</tr>
+				<tr>
+					<td>
+						<p>보안이 취약합니다.</p>
+						<p>전송 할 수 있는 데이터는 최대 255자입니다.</p>
+						<p>post에 비해 처리속도는 빠른 편입니다.</p>
+						<p>name=value의 형식으로 주소창에 전송됩니다.</p>
+						<p>서블릿에서는 doGet()을 이용합니다.</p>
+					</td>
+					<td>
+						<p>get에 비해 보안에 더 유리합니다.</p>
+						<p>전송 할 수 있는 데이터의 양이 무한입니다.</p>
+						<p>get에 비해 처리속도가 느립니다.</p>
+						<p>서블릿에서 doPost()를 이용합니다.</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
