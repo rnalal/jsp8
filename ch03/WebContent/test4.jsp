@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	pageContext.setAttribute("name", "영");
+	pageContext.setAttribute("age", "7");
+%>       
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>전역 변수 설정 및 값 출력</title>
-<!-- 합쳐지고 최소화된 최신 CSS -->
+<title>인클루드 연습</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<!-- 부가적인 테마 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <style>
 	.title { text-align:center; }
@@ -18,12 +19,13 @@
 </style>
 </head>
 <body>
-<h1 class="title">Global Scope Variable(전역 변수)와 에러 페이지</h1>
 	<div class="msg">
-		<a href="test1.jsp" class="btn btn-primary">전역 변수 테스트</a>
-		<a href="test3000.jsp" class="btn btn-primary">에러페이지 테스트</a>
-		<a href="test3_home.jsp" class="btn btn-primary">Exception에러 테스트</a>
-		<a href="test4.jsp" class="btn btn-primary">인클루드연습</a>
+		<h2 class="title">pageContext1 - include directive</h2>
 	</div>
+	<%@ include file="includefile.jsp" %>
+	<div class="msg">
+		<h2 class="title">pageContext2 - include action tag</h2>
+	</div>
+	<jsp:include page="includefile.jsp"></jsp:include>
 </body>
 </html>
