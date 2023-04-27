@@ -15,7 +15,8 @@
 		Class.forName(driver);
 		try{
 			conn = DriverManager.getConnection(url, user, pass);
-			sql = "select * from member";
+			// member 테이블의 아름을 불러와서 board 테이블 author에 표시되게 하기
+			sql = "select board.boid as boid, board.title as title, board.bodate as bodate, member.name as name from board ";
 			try{
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
@@ -28,14 +29,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>회원목록</h2>
+	<h2>게시판목록</h2>
 	<hr>
 	<table>
 	<thead>
 		<tr>
-			<td>회원명</td>
-			<td>전화번호</td>
-			<td>이메일</td>
+			<td>번호</td>
+			<td>제목</td>
+			<td>작성자</td>
+			<td>작성날짜</td>
 		</tr>
 	</thead>
 	
@@ -44,22 +46,10 @@
 		while(rs.next()){
 %>
 		<tr>
-			<td>
-			<a href='postgreWebUpdate.jsp?id=<%=rs.getString("id")%>'>
-			<%=rs.getString("name") %></a></td>
-			<td><%=rs.getString("maker") %></td>
-			<td><%=rs.getString("model") %></td>
-			<td><%=rs.getInt("year") %></td>
-			<td><%=rs.getString("color") %></td>
-			<td><%=rs.getString("created_at") %></td>
-			
-			<!-- rs.getString할때 컬럼명이 중복되거나, 너무 길면 as로 지정가능 
-			예) select a.c_name as cname, b_class_area as carea from tbl_member a inner join tbl_course b on a.con=b.c_no;
-			
-			rs.getString("cname");
-			rs.getString("carea"); 
-			 -->
-			 
+			<td><%=rs.getInt("boid") %></td>
+			<td><%=rs.getString("title") %></td>
+			<td><%=rs.getString("name") %></td>
+			<td><%=rs.getString("bodate") %></td>		 
 		</tr>
 	
 <%
