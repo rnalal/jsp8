@@ -28,11 +28,11 @@
 									}
 								%>
 								<% if(id != "") { %>
-								<a href="mypage.jsp">마이페이지</a>
-								<a href="logout.jsp">로그아웃</a>
+								<a href="<%=path1 %>/mypage.jsp">마이페이지</a>
+								<a href="<%=path1 %>/logout.jsp">로그아웃</a>
 								<% } else if(!(id.equals("young"))){ %>
-								<a href="login.jsp">로그인</a>
-								<a href="agreement.jsp">회원가입</a>
+								<a href="<%=path1 %>/login.jsp">로그인</a>
+								<a href="<%=path1 %>/agreement.jsp">회원가입</a>
 								<% } %>
 							</nav>								
                     </ul>
@@ -47,11 +47,11 @@
             <div class="main">
                 <div class="main_wrap">                    
                     <a href="<%=path1 %>/index.jsp" class="logo">
-                        <img src="./images/logo.png" alt="삼양식품로고">
+                        <img src="<%=path1 %>/images/logo.png" alt="삼양식품로고">
                     </a>
                     <nav class="gnb">
                         <ul class="gnb_fr">
-                           <li><a href="<%=path1 %>sub1.jsp">회사소개</a>
+                           <li><a href="<%=path1 %>/sub1.jsp">회사소개</a>
                                 <div class="sub item1">
                                     <ul class="dp2">
                                         <li><a href="<%=path1 %>/sub1.jsp">삼양식품</a></li>
@@ -63,7 +63,7 @@
                                     </ul>
                                 </div>    
                             </li>
-                            <li><a href="<%=path1 %>sub2.jsp">홍보관</a>
+                            <li><a href="<%=path1 %>/sub2.jsp">홍보관</a>
                                 <div class="sub item2">
                                     <ul class="dp2">
                                         <li><a href="<%=path1 %>/sub2.jsp">삼양소식</a></li>
@@ -75,7 +75,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="<%=path1 %>sub3.jsp">지속가능경영</a>
+                            <li><a href="<%=path1 %>/sub3.jsp">지속가능경영</a>
                                 <div class="sub item3">
                                     <ul class="dp2">
                                         <li><a href="<%=path1 %>/sub3.jsp">안전보건환경</a></li>
@@ -86,7 +86,7 @@
                                     </ul>
                                 </div>
                             </li> 
-                            <li><a href="<%=path1 %>sub4.jsp">브랜드</a>
+                            <li><a href="<%=path1 %>/sub4.jsp">브랜드</a>
                                 <div class="sub item4">
                                     <ul class="dp2">
                                         <li><a href="<%=path1 %>/sub4.jsp">삼양라면</a></li>
@@ -97,7 +97,7 @@
                                     </ul>
                                 </div>
                             </li>  
-                            <li><a href="<%=path1 %>sub5.jsp">제품</a>
+                            <li><a href="<%=path1 %>/sub5.jsp">제품</a>
                                 <div class="sub item5">
                                     <ul class="dp2">
                                         <li><a href="<%=path1 %>/sub5.jsp">라면</a></li>
@@ -107,13 +107,13 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="<%=path1 %>sub6.jsp">고객지원</a>
+                            <li><a href="<%=path1 %>/board/sub6.jsp">고객지원</a>
                                 <div class="sub item6">
                                     <ul class="dp2">
-                                        <li><a href="<%=path1 %>/sub6.jsp">고객만족센터</a></li>
-                                        <li><a href="<%=path1 %>/sub6.jsp">고객문의</a></li>
-                                        <li><a href="<%=path1 %>/sub6.jsp">FAQ</a></li>
-                                        <li><a href="<%=path1 %>/sub6.jsp">공지사항</a></li>
+                                        <li><a href="<%=path1 %>/board/sub6.jsp#page1">고객만족센터</a></li>
+                                        <li><a href="<%=path1 %>/board/sub6.jsp#page2">고객문의</a></li>
+                                        <li><a href="<%=path1 %>/board/sub6.jsp#page3">FAQ</a></li>
+                                        <li><a href="<%=path1 %>/board/sub6.jsp#page4">공지사항</a></li>
                                     </ul>
                                 </div>
                             </li>

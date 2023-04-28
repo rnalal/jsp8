@@ -1,78 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
 <%
+	String pid = "";
 	String path = request.getContextPath();
+	if(session.getAttribute("id")!=null){
+		pid = (String) session.getAttribute("id");
+	}
+	String path3 = request.getContextPath();
 %>    
-<%
-
-	request.setCharacterEncoding("utf-8");
-	response.setContentType("text/html; charset=utf-8");
-
-	String driver = "org.postgresql.Driver";
-	String url = "jdbc:postgresql://localhost/pro1";
-	String user = "postgres";
-	String pass = "1234";
-	
-	Connection conn = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs = null;
-	String sql = "";
-	String wid = (String) session.getAttribute("id");
-	String wpw = "";
-	String wname = "";
-	int age = 0;
-	String tel = "";
-	String email = "";
-	String addr = "";
-	int point = 0;
-	String mdate = "";
-	
-	try{
-		Class.forName(driver);
-		try{
-			conn = DriverManager.getConnection(url, user, pass);
-			sql = "select * from member where id=?";
-			try{
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, wid);
-				rs = pstmt.executeQuery();
-				if(rs.next()){
-						wpw = rs.getString("pw");
-						wname = rs.getString("name");
-						age = rs.getInt("age");
-						tel = rs.getString("tel");
-						email = rs.getString("email");
-						addr = rs.getString("addr");
-						point = rs.getInt("point");
-						mdate = rs.getString("mdate");
-					
-				}
-						rs.close();
-						pstmt.close();
-						conn.close();
-					}catch(SQLException e){
-						System.out.println("SQL 전송 실패~!");
-					}
-				}catch(SQLException e){
-					System.out.println("데이터베이스 연결 실패~!");
-				}
-			}catch(ClassNotFoundException e){
-				System.out.println("드라이버 로딩 실패~!");
-		}
-
-%>
 <!DOCTYPE html>
-<html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-	<title>마이페이지</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <title>공지사항 작성</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
     <meta name="subject" content="CJ프레시웨이 벤치마킹 사이트">
     <meta name="keywords" content="삼양식품">
@@ -97,11 +42,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
     <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="sub_common.css">
-    <link rel="stylesheet" href="sublayout.css">
+    <link rel="stylesheet" href="<%=path3 %>/common.css">
+    <link rel="stylesheet" href="<%=path3 %>/main.css">
     <style>
-    .vs { height:40vh; }
-    .content {background-image: url("./images/title1.jpg");}
+        /*내부 스타일*/
+  	   .vs { height:40vh; }
+     .content {background-image: url("./images/title1.jpg");}
 
     #page1 .page_tit { padding-top: 60px; }
     .table { width:900px; margin:4px auto; padding-top:20px; border-top:2px solid #333; }
@@ -128,52 +74,49 @@
     </style>
 </head>
 <body>
-	<div class="container">
-		<%@ include file="./header.jsp" %>
+   <div class="container">
+		<%@ include file="../header.jsp" %>
 		<div class="content">
-			<figure class="vs">
-				<div class="img_box">
-					<h1 class="tit">My Page</h1>
-				</div>
-			</figure>
-			<section class="page" id="page1">
-				<h2 class="page_tit">MY PAGE</h2>
-				<div class="page_wrap">				
+            <figure class="vs">
+                <div class="img_box">
+                    <h1 class="tit">공지사항</h1>
+                </div>
+            </figure>
+            <section class="page" id="page1">
+                <h2 class="page_tit">공지사항 글쓰기</h2>
+                <div class="page_wrap">
+					<form name="post_form" id="post_form" action="boardInsertPro.jsp" method="post">
 						<table class="table">
 							<tbody>
 								<tr>
-									<th>아이디</th><td><%=wid %></td>
+									<th><label for="title" class="lb">제목</label></th>
+									<td><input type="text" name="title" id="title" class="indata" required autofocus></td>
 								</tr>
 								<tr>
-									<th>비밀번호</th><td><%=wpw %></td>
-								</tr>
-								<tr>
-									<th>이름</th><td><%=wname %></td>
-								</tr>
-								<tr>
-									<th>나이</th><td><%=age %></td>
-								</tr>
-								<tr>
-									<th>전화번호</th><td><%=tel %></td>
-								</tr>
-								<tr>
-									<th>이메일</th><td><%=email %></td>
-								</tr>
-								<tr>
-									<th>주소</th><td><%=addr %></td>
+									<th><label for="content" class="lb">내용</label></th>
+									<td>
+										<textarea rows="12" cols="100" name="content" id="content"></textarea>
+										<input type="hidden" name="id" value="<%=pid %>">
+									</td>
 								</tr>
 								<tr>
 									<td colspan="2">
-										<a href="member_mod.jsp?id=<%=wid %>" class="btn btn-primary">정보 수정</a>&nbsp;&nbsp;&nbsp;&nbsp;
-										<a href="member_del.jsp?id<%=wid %>" class="btn btn-cancle">회원탈퇴</a>
+										<input type="submit" value="글 등록" class="btn btn-primary"> &nbsp; &nbsp; &nbsp; &nbsp;
+										<input type="reset" value="취소" class="btn btn-cancel" onclick="init()">
 									</td>
 								</tr>
 							</tbody>
 						</table>
-				
-				</div>
-			</section>
-		</div>
+					</form>
+                </div>
+            </section>
+        </div>
 	</div>
+
+		<%@ include file = "../footer.jsp" %> 
+   	<div class="fix_area">
+        <a href="#page5" class="cir_box counsel">고객<br>상담센터</a>
+        <a href="#" class="cir_box totop">↑<br>TOP</a>
+   	</div>
 </body>
 </html>

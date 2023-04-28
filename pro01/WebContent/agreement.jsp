@@ -332,6 +332,7 @@
 								<label for="ck_item1">이용약관에 대한 동의</label>
 							</div>
 					</div>
+					<hr>
 					<div class="grp_textarea">
 						<h3>개인정보수집 동의</h3>
 						<textarea rows="30" cols="100" readonly>
