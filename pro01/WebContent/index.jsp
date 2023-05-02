@@ -3,6 +3,10 @@
 <%
 	String path = request.getContextPath();
 %>    
+<%
+request.setCharacterEncoding("utf-8");
+response.setContentType("text/html; charset=utf-8");
+%>
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -32,8 +36,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="<%=path %>/common.css">
+    <link rel="stylesheet" href="<%=path %>/main.css">
     <style>
         /*내부 스타일*/
     </style>

@@ -23,7 +23,7 @@
 								<%
 									if(id.equals("young") && id != "") {
 								%>
-								<a href="admin.jsp">관리자</a>
+								<a href="<%=path1 %>/young/index.jsp">관리자</a>
 								<%
 									}
 								%>

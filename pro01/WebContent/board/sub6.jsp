@@ -44,23 +44,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<%=path %>/common.css">
-    <link rel="stylesheet" href="<%=path %>/main.css">
+    <link rel="stylesheet" href="<%=path %>/sub_common.css">
+    <link rel="stylesheet" href="<%=path %>/sublayout.css">
     
     <style>
    .vs { height:40vh; }
-    .content { background-image: url("../images/top_career.jpg"); }
-	table { display:table; width:900px; margin:10px auto; 
-	border-bottom:1px solid #333; 
-	border-collapse:collapse; }
-	tr { display:table-row; }
-	th, td { display:table-cell; border-top:1px solid #333;
-	text-align:center; line-height:36px; }
-	th { background-color:#ffc65d; color:#333; }
-    .table { width:900px; margin:4px auto; padding-top:20px; border-top:2px solid #333; }
-    .lb { display:block;  font-size:20px; }
-    .indata { display:inline-block; width:300px; height:24px; line-height:24px; padding:10px; }
-
-    .btn { display:inline-block; outline:none; border:none; border-radius:8px; margin:16px;
+   .content {background-image: url("<%=path%>/images/title1.jpg");}
+   
+   	  #page1 .page_wrap {text-align:center; padding-top: 70px; line-height: 30px;}
+   	  #page1 .page_comment {font-size:20px; padding-top:50px; line-height:50px;}
+ 
+      #page2 .grid3 li {text-align: center; box-sizing: border-box; border: 1px solid #eee; height: 500px;}
+      #page2 .grid3 .grid_tit {font-size: 28px; font-weight: 200; color: #ff7300; padding-top: 100px;}
+      #page2 .grid3 .grid_tit:after {content: "";  display: block; clear: both; width: 80px;
+      height: 5px; background-color: #ff9900; margin: 30px auto;}
+      #page2 .grid3 .grid_com {padding-top: 14px;}
+      #page2 .page_wrap {text-align:center; padding-top: 30px; line-height: 30px;}
+      #page2 .grid3 .grid_tel {font-size: 28px;}
+ 
+      #page3 { background-color:#fff; color:#333; }
+      #page3 .tit_box {clear: both; padding-top: 80px; width: 1280px; margin: 0 auto; }
+      #page3 .more {display: block; position: absolute; top: 60px; right: 200px; font-size: 68px; font-weight: bolder;
+      width: 80px; height: 80px; border: 1px solid #ccc; text-align: center; color: #999; }
+      #page3 .board_fr { clear: both; width: 1280px; margin: 0px auto; padding-top: 40px; }
+      #page3 .tb1 { clear: both; display: table; border-collapse: collapse;}
+      #page3 .tbl tr { display: table-row; width: 1280px;}
+      #page3 .tbl td {display: table-cell; min-height: 50px; padding-top: 20px; padding-bottom: 20px;
+      border-top: 1px solid #ccc;}
+      #page3 .tbl tr:last-child td { border-bottom:1px solid #ccc;}
+      #page3 .tbl td.td1 { vertical-align: top; width: 100px; text-align:  left; font-size: 32px;
+      color: #ff9900; font-weight: 100;}
+      #page3 .tbl td a { display: block; color: #333; transition-duration: 0.4s;}
+      #page3 .tbl td a .td_tit { width: 1100px; font-size: 28px; line-height: 1.4; font-weight: 200; padding-right: 20;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align:left; }
+      #page3 .tbl td a .td_com { width: 1100px; font-size: 18px; line-height: 2.2; font-weight: 100;
+      color: #999; padding-right: 36px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align:left;}
+      #page3 .tbl td a:hover { color:#ff9900;}
+      #page3 .tbl td a:hover .td_com { color:#ff9900;}
+      
+		#page4 table { display:table; width:900px; margin:10px auto; 
+		border-bottom:1px solid #333; 
+		border-collapse:collapse; }
+		#page4 tr { display:table-row; }
+		#page4 th, td { display:table-cell; border-top:1px solid #333;
+		text-align:center; line-height:36px; }
+		#page4 th { background-color:#ffc65d; color:#333; }
+		#page4 .table { width:900px; margin:4px auto; padding-top:20px; border-top:2px solid #333; }
+		#page4 .lb { display:block;  font-size:20px; }
+		#page4 .indata { display:inline-block; width:300px; height:24px; line-height:24px; padding:10px; }
+	
+	    .btn { display:inline-block; outline:none; border:none; border-radius:8px; margin:16px;
          text-align: center; padding:10px 20px;  cursor:pointer; }
     .btn-primary { background: -moz-linear-gradient(top, #ffa600 0%, #ffa600 100%); 
 
@@ -71,9 +105,11 @@
         background: linear-gradient(to bottom, #ffcf76 0%,#ffcf76 44%,#ffcf76 100%);
         color:#fff;
     }
-    .page_tit { text-align:center; font-size:32px; padding-top:100px; padding-bottom:30px;}
+    .page_tit {padding-top:100px; padding-bottom:30px;}
     .page_wrap {padding-top:30px;}
+      
     </style>
+
 </head>
 
 <body>
@@ -87,16 +123,88 @@
 			</figure>
 			<section class="page" id="page1">
 				<h2 class="page_tit">고객만족센터</h2>
-				
+					<div class="page_wrap">
+                    	<a href=""><img src="<%=path %>/images/sound.jpg" width="600px"  ></a>
+                        	<p class="page_comment">고객만족시스템을 통해 접수되는 의견은 품질관리, 연구, 마케팅 등 관련 부서에 전달되며,<br>
+                        	전 부문에서 고객의 소리를 적극적으로 반영하고자 노력하고 있습니다.</p>
+                </div>							
 			</section>
 			<section class="page" id="page2">
 				<h2 class="page_tit">고객문의</h2>
-				
+				   <div class="page_wrap">
+                    <article class="grid3">
+                        <ul class="grid_box">
+                            <li>
+                                <div>
+                                    <h3 class="grid_tit">무료상담전화</h3>
+                                    <h3 class="grid_tel">080-940-3333<br><br></h3>
+                                    <p class="grid_com">
+					                                        상담시간 :평일 오전9시~오후6시 <br>
+					                                        점심시간:오후12시~오후1시 <br>
+					                                        토요일,일요일,공휴일 휴무 
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3 class="grid_tit">홈페이지 문의</h3>
+                                    <p class="grid_com">
+                                    	<button onclick="location.href='<%=path %>/faq.jsp'">문의 바로가기</button >
+                                    	
+                                    </p>
+                                </div>                           
+                            </li>
+                            <li>
+                                <div>
+                                    <h3 class="grid_tit">우편접수</h3>
+                                    <p class="grid_com">서울특별시 성북구 오패산로3길 104<br>
+                                        (주)삼양식품 고객만족팀
+                                    </p>
+                                </div>                           
+                            </li>
+                        </ul>
+                    </article>
+                </div>				
 			</section>
 			<section class="page" id="page3">
 				<h2 class="page_tit">FAQ</h2>
-				
-			</section>
+				    <div class="page_wrap">
+                    <a href="<%=path %>/faq.jsp" class="more">+</a>
+                    <article class="board_fr">
+                        <table class="tbl">
+                            <tbody>
+                                <tr>
+                                    <td class="td1">3</td>
+                                    <td class="td2">
+                                        <a href="">
+                                            <h3 class="td_tit">삼양식품</h3>
+                                            <p class="td_com">삼양식품은 식물성 건강 브랜드 ‘잭앤펄스(Jack & Pulse)’를 론칭하고, 첫번째 제품으로 식물성 단백질 음료 ‘프로틴드롭(ProteinDrop)’을 출시한다고 밝혔다.</p>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td1">2</td>
+                                    <td class="td2">
+                                        <a href="">
+                                            <h3 class="td_tit">글로벌 시장 등에 업은 삼양식품, 외형·내실 다 잡았다</h3>
+                                            <p class="td_com">불닭으로 세계인의 입맛을 사로잡은 삼양식품이 지난해 해외사업부문의 폭발적인 성장으로 외형과 내실을 모두 챙겼다.</p>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td1">1</td>
+                                    <td class="td2">
+                                        <a href="">
+                                            <h3 class="td_tit">삼양식품, 한-인도수교 50주년 맞아 주인도 대한민국 대사관 행사에 불닭볶음면 등 제품 500박스 협찬</h3>
+                                            <p class="td_com">삼양식품은 한국과 인도의 수교 50주년을 기념해 주인도 대한민국 대사관 행사 협찬을 통해 불닭볶음면 등 제품 500박스(14,800개) 현지 기부를 진행하고 있다고 밝혔다.</p>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
 			<section class="page" id="page4">
 				<h2 class="page_tit">공지사항</h2>
 					<table>

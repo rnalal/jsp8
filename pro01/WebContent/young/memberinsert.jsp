@@ -38,11 +38,12 @@
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="<%=path %>/sub_common.css">
+     <link rel="stylesheet" href="<%=path %>/common.css">
     <link rel="stylesheet" href="<%=path %>/sublayout.css">
     <style>
         /*내부 스타일*/
   	   .vs { height:40vh; }
-     .content {background-image: url("./images/title1.jpg");}
+     .content {background-image: url("../images/title1.jpg");}
 
     #page1 .page_tit { padding-top: 60px; }
     .table { width:900px; margin:4px auto; padding-top:20px; border-top:2px solid #333; }
@@ -70,7 +71,7 @@
 </head>
 <body>
    <div class="container">
-		<%@ include file="./header.jsp" %>
+		<%@ include file="../header.jsp" %>
 		<div class="content">
             <figure class="vs">
                 <div class="img_box">
@@ -162,7 +163,7 @@
         </div>
 	</div>
 
-		<%@ include file = "./footer.jsp" %> 
+		<%@ include file = "../footer.jsp" %> 
    	<div class="fix_area">
         <a href="#page5" class="cir_box counsel">고객<br>상담센터</a>
         <a href="#" class="cir_box totop">↑<br>TOP</a>

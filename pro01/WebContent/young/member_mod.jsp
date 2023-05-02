@@ -5,10 +5,6 @@
 	String path = request.getContextPath();
 %>    
 <%
-
-	request.setCharacterEncoding("utf-8");
-	response.setContentType("text/html; charset=utf-8");
-
 	String driver = "org.postgresql.Driver";
 	String url = "jdbc:postgresql://localhost/pro1";
 	String user = "postgres";
@@ -129,7 +125,7 @@
 </head>
 <body>
 	<div class="container">
-		<%@ include file="./header.jsp" %>
+		<%@ include file="../header.jsp" %>
 		<div class="content">
 			<figure class="vs">
 				<div class="img_box">
@@ -137,40 +133,56 @@
 				</div>
 			</figure>
 			<section class="page" id="page1">
-				<h2 class="page_tit">MY PAGE</h2>
-				<div class="page_wrap">				
+				<h2 class="page_tit">회원정보수정</h2>
+				<div class="page_wrap">
+					<form name="modify_form" id="modify_form" action="member_modify_pro.jsp" method="post" onsubmit="return form_chedk(this)">
 						<table class="table">
 							<tbody>
 								<tr>
-									<th>아이디</th><td><%=wid %></td>
+									<th><label for="id" class="lb">아이디</label></th>
+									<td>
+										<input type="text" name="id" id="id" class="indata" value="<%=wid %>" readonly>
+									</td>
 								</tr>
 								<tr>
-									<th>비밀번호</th><td><%=wpw %></td>
+									<th><label for="pw" class="lb">비밀번호</label></th>
+									<td>
+										<input type="password" name="pw" id="pw" class="indata" pattern="^[A-Za-z\d$!%*#?&]{4,8}$" value="<%=wpw %>" required>
+									</td>
 								</tr>
 								<tr>
-									<th>이름</th><td><%=wname %></td>
+									<th><label for="pw2">비밀번호 확인</label></th>
+									<td><input type="password" name="pw2" id="pw2" class="indata" pattern="^[A-Za-z\d$!%*#?&]{4,10}$" required></td>
 								</tr>
 								<tr>
-									<th>나이</th><td><%=age %></td>
+									<th><label for="name">이름</label></th>
+									<td><input type="text" name="name" id="name" class="indata" pattern="^[가-힣A-Za-z]{2,12}$" value="<%=wname %>" required></td>
 								</tr>
 								<tr>
-									<th>전화번호</th><td><%=tel %></td>
+									<th><label for="age">나이</label></th>
+									<td><input type="text" name="age" id="age" class="indata" pattern="^[0-9]{1,2}$" value="<%=age %>" required></td>
 								</tr>
 								<tr>
-									<th>이메일</th><td><%=email %></td>
+									<th><label for="email">이메일</label></th>
+									<td><input type="email" name="email" id="email" class="indata" value="<%=email %>"></td>
 								</tr>
 								<tr>
-									<th>주소</th><td><%=addr %></td>
+									<th><label for="tel">전화번호</label></th>
+									<td><input type="tel" name="tel" id="tel" maxlength="13" class="indata" value="<%=tel %>"></td>
+								</tr>
+								<tr>
+									<th><label for="addr">주소</label></th>
+									<td><input type="text" name="addr" id="addr" class="indata" value="<%=addr %>"></td>
 								</tr>
 								<tr>
 									<td colspan="2">
-										<a href="<%=path %>/member_mod.jsp?id=<%=wid %>" class="btn btn-primary">정보 수정</a>&nbsp;&nbsp;&nbsp;&nbsp;
-										<a href="<%=path %>/member_del.jsp?id<%=wid %>" class="btn btn-cancle">회원탈퇴</a>
+										<input type="submit" value="회원정보수정" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href="mypage.jsp?id=<%=wid %>" class="btn btn-primary">마이페이지</a>
 									</td>
 								</tr>
 							</tbody>
 						</table>
-				
+					</form>					
 				</div>
 			</section>
 		</div>

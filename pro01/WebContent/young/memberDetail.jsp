@@ -18,7 +18,7 @@
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	String sql = "";
-	String wid = (String) session.getAttribute("id");
+	String wid = request.getParameter("id");
 	String wpw = "";
 	String wname = "";
 	int age = 0;
@@ -96,9 +96,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="sub_common.css">
-    <link rel="stylesheet" href="sublayout.css">
+    <link rel="stylesheet" href="<%=path %>/common.css">
+    <link rel="stylesheet" href="<%=path %>/main.css">
     <style>
     .vs { height:40vh; }
     .content {background-image: url("./images/title1.jpg");}
@@ -129,15 +128,15 @@
 </head>
 <body>
 	<div class="container">
-		<%@ include file="./header.jsp" %>
+		<%@ include file="./young_header.jsp" %>
 		<div class="content">
 			<figure class="vs">
 				<div class="img_box">
-					<h1 class="tit">My Page</h1>
+					<h1 class="tit">회원 정보</h1>
 				</div>
 			</figure>
 			<section class="page" id="page1">
-				<h2 class="page_tit">MY PAGE</h2>
+				<h2 class="page_tit">회원 상세보기</h2>
 				<div class="page_wrap">				
 						<table class="table">
 							<tbody>
@@ -164,16 +163,16 @@
 								</tr>
 								<tr>
 									<td colspan="2">
-										<a href="<%=path %>/member_mod.jsp?id=<%=wid %>" class="btn btn-primary">정보 수정</a>&nbsp;&nbsp;&nbsp;&nbsp;
-										<a href="<%=path %>/member_del.jsp?id<%=wid %>" class="btn btn-cancle">회원탈퇴</a>
+										<a href="member_mod.jsp?id=<%=wid %>" class="btn btn-primary">정보 수정</a>&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href="member_del.jsp?id<%=wid %>" class="btn btn-cancle">회원탈퇴</a>
 									</td>
 								</tr>
 							</tbody>
-						</table>
-				
+						</table>			
 				</div>
 			</section>
 		</div>
+		 <%@ include file="../footer.jsp" %>
 	</div>
 </body>
 </html>
