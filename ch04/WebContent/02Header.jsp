@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ tablib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.*, java.net.InetAddress" %>
-<%@ include file="common.jsp" %> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +16,7 @@
 </style>
 </head>
 <body>
-	<%@ include file="common.jsp" %>
+<%@ include file="common.jsp" %>
 	<div class="msg">
 		<h2>Header 정보</h2>
 		<p>해당 페이지를 보내거나 요청하면, 그 요청된 모든 정보 발행</p>

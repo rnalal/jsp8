@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="com.pro02.dto.Basket" project="pro02" file="/pro02/src/com/pro02/dto/Basket.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="com.benito.dto.Basket" project="pro02" 
+    file="/pro02/src/com/benito/dto/Basket.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="145" y="321"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="com.pro02.dto.Latter" project="pro02" file="/pro02/src/com/pro02/dto/Latter.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="com.benito.dto.Latter" project="pro02" 
+    file="/pro02/src/com/benito/dto/Latter.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="310" y="320"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="com.pro02.dto.Order1" project="pro02" file="/pro02/src/com/pro02/dto/Order1.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="com.benito.dto.Order1" project="pro02" 
+    file="/pro02/src/com/benito/dto/Order1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="473" y="360"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -28,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.pro02.dto.Pay" project="pro02" file="/pro02/src/com/pro02/dto/Pay.java" 
+  <class id="4" language="java" name="com.benito.dto.Pay" project="pro02" file="/pro02/src/com/benito/dto/Pay.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="643" y="318"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -37,8 +37,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="com.pro02.dto.Product" project="pro02" 
-    file="/pro02/src/com/pro02/dto/Product.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="com.benito.dto.Product" project="pro02" 
+    file="/pro02/src/com/benito/dto/Product.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="817" y="348"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -46,7 +46,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="com.pro02.dto.User1" project="pro02" file="/pro02/src/com/pro02/dto/User1.java" 
+  <class id="6" language="java" name="com.benito.dto.User1" project="pro02" file="/pro02/src/com/benito/dto/User1.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="981" y="316"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

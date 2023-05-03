@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ tablib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.*, java.net.InetAddress" %>
-<%@ include file="common.jsp" %>     
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +26,7 @@
 	<h3>include</h3>
 	<p>jsp 페이지의 특정 영역에 다른 문서의 내용을 포함을 시키는 디렉티브</p>
 	<h3>taglib</h3>
-	<p>jsp 페이지에 사용할 태그라이브러리를 지정하는 디렉티브</p>
-	
+	<p>jsp 페이지에 사용할 태그라이브러리를 지정하는 디렉티브</p>	
 </div>
 </body>
 </html>
