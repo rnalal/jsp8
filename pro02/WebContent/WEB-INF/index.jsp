@@ -7,11 +7,18 @@
 <head>
 <%@ include file="../common.jsp" %>
 <title>메인 페이지</title>
+<style>
+.container-fluid { width:1280px; }
+</style>
 </head>
 <body>
 <%@ include file="../header.jsp" %>
-<div class="content">
-	<h2>메인 페이지 콘텐츠</h2>
+<div class="content" style="padding-top:30px; margin-top:30px; border-top:3px solid #333; min-height:500px; ">
+	<section class="page">
+		<div class="container-fluid">
+			<h2 class="title">메인 페이지 콘텐츠</h2>
+		</div>
+	</section>
 </div>
 <%@ include file="../footer.jsp" %>
 </body>
