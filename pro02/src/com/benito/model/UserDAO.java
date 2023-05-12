@@ -27,7 +27,7 @@ public class UserDAO {
 	String qpw;
 	
 	public ArrayList<User> getUserList() throws InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidAlgorithmParameterException, BadPaddingException, IllegalBlockSizeException{
-		ArrayList<User> uList = new ArrayList<User>();
+		ArrayList<User> userList = new ArrayList<User>();
 		try {
 			con = Oracle11.getConnection();
 			pstmt = con.prepareStatement(Oracle11.USER_SELECT_ALL);
@@ -51,7 +51,7 @@ public class UserDAO {
 				user.setAddr(rs.getString("addr"));
 				user.setPoint(rs.getInt("point"));
 				user.setVisited(rs.getInt("visited"));
-				uList.add(user);
+				userList.add(user);
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -60,7 +60,7 @@ public class UserDAO {
 		} finally {
 			Oracle11.close(rs, pstmt, con);
 		}
-		return uList;
+		return userList;
 	}
 
 	public int loginCheck(String id, String pw) throws InvalidKeyException, NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidParameterSpecException, UnsupportedEncodingException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException{
@@ -139,6 +139,7 @@ public class UserDAO {
 		}
 		return cnt;
 	}
+	
 	public void userVisitedCount(String id){
 		try {
 			con = Oracle11.getConnection();
@@ -211,6 +212,35 @@ public class UserDAO {
 		}
 		return user;
 	}
+	
+	public User userDetail(String id) throws InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidAlgorithmParameterException, BadPaddingException, IllegalBlockSizeException{
+		User user = new User();
+		String wid = "";
+		try {
+			con = Oracle11.getConnection();
+			pstmt = con.prepareStatement(Oracle11.USER_LOGIN);
+			pstmt.setString(1, wid);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				user.setPw("pw");
+				user.setName(rs.getString("name"));
+				user.setTel(rs.getString("tel"));
+				user.setEmail(rs.getString("email"));
+				user.setUdate(rs.getString("udate"));
+				user.setAddr(rs.getString("addr"));
+				user.setPoint(rs.getInt("point"));
+				user.setVisited(rs.getInt("visited"));
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			Oracle11.close(rs, pstmt, con);
+		}
+		return user;
+	}
+
 	
 	public int updateUser(User user){
 		int cnt = 0;
@@ -309,7 +339,53 @@ public class UserDAO {
 		}
 		return uList;
 	}
+	
+	public User getTel(String id) {
+		User user = new User();
+		try {
+			con = Oracle11.getConnection();
+			pstmt = con.prepareStatement(Oracle11.USER_LOGIN);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				user.setId(rs.getString("id"));
+				user.setName(rs.getString("name"));
+				user.setTel(rs.getString("tel"));
+				user.setEmail(rs.getString("email"));
+				user.setUdate(rs.getString("udate"));
+				user.setAddr(rs.getString("addr"));
+				user.setPoint(rs.getInt("point"));
+				user.setVisited(rs.getInt("visited"));
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			Oracle11.close(rs, pstmt, con);
+		}
+		return user;
+	}
+	
+	public int resetPassword(String id, String passwd) {
+		int cnt = 0;
+		try {
+			con = Oracle11.getConnection();
+			pstmt = con.prepareStatement(Oracle11.UPDATE_PW_RESET);
+			pstmt.setString(1, passwd);
+			pstmt.setString(2, id);
+			cnt = pstmt.executeUpdate();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			Oracle11.close(pstmt, con);
+		}
+		return cnt;
+	}
 }
+
 
 
 
