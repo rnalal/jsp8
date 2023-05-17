@@ -46,7 +46,9 @@
     <link rel="stylesheet" href="<%=path %>/common.css">
     <link rel="stylesheet" href="<%=path %>/sub_common.css">
     <link rel="stylesheet" href="<%=path %>/sublayout.css">
-    
+    <script src="<%=path %>/jquery-1.10.1.min.js"></script>
+    <script src="<%=path %>/datatables.min.js"></script>
+    <link rel="stylesheet" href="<%=path %>/datatables.min.css">
     <style>
    .vs { height:40vh; }
    .content {background-image: url("<%=path%>/images/title1.jpg");}
@@ -227,7 +229,7 @@
 				Class.forName(driver);
 				try{
 					conn = DriverManager.getConnection(url, user, pass);
-					sql = "select board.boid as boid, board.title as title, board.content as content, member.name as name, board.bodate as bodate, board.author as author from board, member where board.author=member.id";
+					sql = "select board.boid as boid, board.title as title, board.content as content, member.name as name, board.bodate as bodate, board.author as author from board, member where board.author=member.id order by board.boid desc";
 					try{
 						pstmt = conn.prepareStatement(sql);
 						rs = pstmt.executeQuery();
